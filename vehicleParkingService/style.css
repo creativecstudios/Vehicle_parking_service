@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* ------------------------------------------------------------
+sidenavbar
+------------------------------------------------------------ */
+nav{
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    background-color: #1A2238;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.navheading{
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: larger;
+    font-weight: bold;
+    color: #eeeeee;
+    cursor: pointer;
+}
+.navheading img{
+    height: 30px;
+    width: 30px;
+}
+.links{
+    padding-top: 50px;
+}
+.links a{
+    text-decoration: none;
+    color: #FFFFFF;
+    display: block;
+    padding: 13px;
+}
+.links a:hover{
+    background-color: #F4DB7D;
+    color: #1A2238;
+    font-weight: bold;
+    font-size: 17px;
+    transition: ease-in-out .5s;
+}
+#active{
+    background-color: #F4DB7D;
+    color: #1A2238;
+    font-weight: bold;
+}
+/* ------------------------------------------------------------
+mainbody
+------------------------------------------------------------ */
+.mainbody{
+    padding: 20px;
+    margin-left: 300px;
+    height: 100vh;
+}
+/* ------------------------------------------------------------
+table
+------------------------------------------------------------ */
+.heading{
+    text-align: center;
+    padding-top: 25px;
+}
+.headingunderline{
+    margin-top: 3px;
+    background-color: #1A2238;
+    height: 3px;
+}
+table{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+th{
+    background-color: #1A2238;
+    color: #FFFFFF;
+}
+th,td{
+    padding: 15px 15px;
+}
+tr:nth-child(odd){
+    background-color: #eeeeee;
+    color: #1A2238;
+}
+/* ------------------------------------------------------------
+login form
+------------------------------------------------------------ */
+.input-form{
+    margin: 20px;
+    margin-left: 470px;
+}
+.fields{
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  */
+}
+.rows{
+    display: grid;
+    grid-template-rows: 22px 20px 40px;
+    width: 250px;
+}
+.rows input{
+    height: 30px;
+    padding-left: 10px;
+}
+.rows select{
+    height: 30px;
+}
+.label{
+    font-weight: bold;
+}
+#address{
+    height: 44px;
+}
+.reset{
+margin-top: 16px;
+}
+#submit input{
+    height: 40px;
+    background-color:rgb(0, 167, 121);
+    color: #FFFFFF;
+    letter-spacing: 2px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#reset input{
+    background-color: rgb(48, 120, 180);
+    color: #FFFFFF;
+    letter-spacing: 2px;
+    font-weight: bold;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}

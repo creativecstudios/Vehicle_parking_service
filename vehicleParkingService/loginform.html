@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Login form</title>
+</head>
+
+<body>
+    <nav>
+        <div class="navheading"><img src="/images/parking.png" alt="" srcset=""> Vehicle parking service</div>
+        <div class="links">
+            <a href="loginform.html" id="active">Login form</a>
+            <a href="vehicledetails.html">Vehicle Details</a>
+        </div>
+    </nav>
+    <div class="mainbody">
+        <h2 class="heading">Login form</h2>
+        <hr class="headingunderline">
+
+        <div class="input-form">
+            <form autocomplete="off">
+                <div class="fields">
+                    <div class="rows">
+                        <label for="customerName" class="label">Customer name *</label>
+                        <input type="text" placeholder="Customer name">
+                    </div>
+                    <div class="rows">
+                        <label for="address" class="label" >Address *</label>
+                        <input type="text" id="address" placeholder="Address">
+                    </div>
+                    <div class="rows">
+                        <label for="vehiclenNo" class="label">Vehicle number *</label>
+                        <input type="text" placeholder="vehicle number">
+                    </div>
+                    <div class="rows">
+                        <label for="parkingHours" class="label">Parking hours *</label>
+                        <input type="time">
+                    </div>
+                    <div class="rows">
+                        <label for="vehicleType" class="label">Vehicle type *</label>
+                        <select name="vehicletype" id="Vehicletype">
+                            <option value="car">Car</option>
+                            <option value="bike">Bike</option>
+                        </select>
+                    </div>
+                    <div class="rows">
+                        <label for="parkingdate" class="label">Parking date *</label>
+                        <input type="date" name="" id="">
+                    </div>
+                    <div class="rows" id="submit">
+                        <input type="submit">
+                    </div>
+                    <div class="rows" id="reset">
+                        <input type="reset">
+                    </div>
+                    
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
