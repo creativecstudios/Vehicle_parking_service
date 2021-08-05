@@ -91,7 +91,10 @@ login form
 ------------------------------------------------------------ */
 .input-form{
     margin: 20px;
-    margin-left: 470px;
+    margin-left: 270px;
+    width: 700px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
 }
 .fields{
     /* display: grid;
@@ -99,8 +102,10 @@ login form
 }
 .rows{
     display: grid;
-    grid-template-rows: 22px 20px 40px;
-    width: 250px;
+    /* grid-template-rows: 22px 20px 40px; */
+    /* width: 250px; */
+    grid-template-columns: 2fr 2fr;
+    padding: 20px;
 }
 .rows input{
     height: 30px;
@@ -127,8 +132,10 @@ margin-top: 16px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    margin-right: 10px;
+    width: 190px;
 }
-#reset input{
+.rows #reset{
     background-color: rgb(48, 120, 180);
     color: #FFFFFF;
     letter-spacing: 2px;
@@ -137,4 +144,7 @@ margin-top: 16px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    margin-left: 10px;
+    width: 190px;
+    
 }
