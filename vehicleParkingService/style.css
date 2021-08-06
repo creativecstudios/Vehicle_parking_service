@@ -10,7 +10,7 @@ sidenavbar
 ------------------------------------------------------------ */
 nav{
     width: 300px;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     background-color: #1A2238;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -22,6 +22,9 @@ nav{
     font-weight: bold;
     color: #eeeeee;
     cursor: pointer;
+}
+.navheading p{
+    display: inline;
 }
 .navheading img{
     height: 30px;
@@ -48,13 +51,14 @@ nav{
     color: #1A2238;
     font-weight: bold;
 }
+
 /* ------------------------------------------------------------
 mainbody
 ------------------------------------------------------------ */
 .mainbody{
     padding: 20px;
     margin-left: 300px;
-    height: 100vh;
+    height: 100%;
 }
 /* ------------------------------------------------------------
 table
@@ -91,43 +95,46 @@ login form
 ------------------------------------------------------------ */
 .input-form{
     margin: 20px;
-    margin-left: 270px;
-    width: 700px;
+    margin-left: 280px;
+    /* background-color: #F4DB7D; */
+    width: 600px;
+    color: #1A2238;
+    /* width: 700px; */
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
-}
-.fields{
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr;  */
 }
 .rows{
     display: grid;
     /* grid-template-rows: 22px 20px 40px; */
     /* width: 250px; */
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 2fr 2fr ;
     padding: 20px;
 }
-.rows input{
+.subrow input{
     height: 30px;
+    width: 250px;
     padding-left: 10px;
+    
 }
-.rows select{
+.subrow select{
+    width: 250px;
     height: 30px;
 }
 .label{
     font-weight: bold;
 }
 #address{
+    width: 250px;
     height: 44px;
 }
 .reset{
 margin-top: 16px;
 }
-#submit input{
+.rows #submit{
     height: 40px;
-    background-color:rgb(0, 167, 121);
-    color: #FFFFFF;
-    letter-spacing: 2px;
+    background-color:rgb(5, 190, 76);
+    color:#FFFFFF;
+    letter-spacing: 4px;
     font-weight: bold;
     border: none;
     border-radius: 8px;
@@ -136,9 +143,9 @@ margin-top: 16px;
     width: 190px;
 }
 .rows #reset{
-    background-color: rgb(48, 120, 180);
+    background-color: rgb(40, 127, 197);
     color: #FFFFFF;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     font-weight: bold;
     height: 40px;
     border: none;
@@ -147,4 +154,80 @@ margin-top: 16px;
     margin-left: 10px;
     width: 190px;
     
+}
+.subrow{
+    display: grid;
+    grid-template-rows: 20px 10px;
+}
+.labelerr{
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    visibility: hidden;
+}
+.labelerradd{
+    margin-top: 23px;
+    font-size: 14px;
+    color: red;
+    visibility: hidden;
+}
+/* ------------------------------------------------------------
+responsive
+------------------------------------------------------------ */
+@media (max-width : 500px){
+ nav{
+     width: 100%;
+     height: 195px;
+     position: absolute;
+ }  
+ .navheading img{
+    height: 20px;
+    width: 20px;
+}
+
+.mainbody{
+    position: absolute;
+    margin-top: 195px;
+    margin-left: 50px;
+}
+.input-form{
+    margin-left: 20px;
+    width: 300px;
+}
+.rows{
+    display: grid;
+    grid-template-columns: 2fr;
+}
+.sub{
+    margin-bottom: 20px;
+}
+.res{
+    margin-left: 10px;
+}
+}
+@media (max-width : 300px){
+    nav{
+        width: 100%;
+        height: 220px;
+        position: absolute;
+    }  
+    .navheading img{
+       height: 20px;
+       width: 20px;
+   }
+   .mainbody{
+    position: absolute;
+    margin-top: 220px;
+    margin-left: 10px;
+}
+    i{
+       visibility: visible;
+   }
+   #icon1 i{
+       color: #FFFFFF;
+   }
+   .links a{
+       visibility: hidden;
+   }
+  
 }

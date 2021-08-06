@@ -9,57 +9,91 @@
     <link rel="stylesheet" href="style.css">
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/f599d6d5c2.js" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="parking.js"></script>
     <title>Login form</title>
 </head>
 
 <body>
     <nav>
-        <div class="navheading"><img src="/images/parking.png" alt="" srcset=""> Vehicle parking service</div>
+        <div class="navheading"><img src="/images/parking.png" alt="" srcset=""><p> Vehicle parking service </p></div>
         <div class="links">
-            <a href="loginform.html" id="active">Login form</a>
-            <a href="vehicledetails.html">Vehicle Details</a>
+            <a href="loginform.html" id="active"><i id="icon1" class="fas fa-sign-in-alt"></i> Registration form</a>
+            <a href="vehicledetails.html"><i id="icon" class="fas fa-info-circle"></i> Vehicle details</a>
         </div>
     </nav>
     <div class="mainbody">
-        <h2 class="heading">Login form</h2>
+        <h2 class="heading">Registration form</h2>
         <hr class="headingunderline">
 
         <div class="input-form">
             <form autocomplete="off">
-                <div class="fields">
-                    <div class="rows">
-                        <label for="customerName" class="label">Customer name *</label>
-                        <input type="text" placeholder="Customer name">
+                <div class="rows">
+                    <label for="customerName" class="label">Customer name *</label>
+                    <div class="subrow">
+                        <input type="text" id="customerName" placeholder="Customer name" onkeyup="onkeyupCustomerName()" autofocus>
+                        <label id="lblcustomerName"class="labelerr">customer name is required</label>
                     </div>
-                    <div class="rows">
-                        <label for="address" class="label" >Address *</label>
-                        <input type="text" id="address" placeholder="Address">
+                </div>
+                <div class="rows">
+                    <label for="address" class="label">Address *</label>
+                    <div class="subrow">
+                        <textarea name="address" id="address" cols="30" rows="10" style="padding: 10px;" placeholder="address" onkeyup="onkeyupAddress()"></textarea>
+                        <label id="lbladdress" class="labelerradd" >address is required</label>
                     </div>
-                    <div class="rows">
-                        <label for="vehiclenNo" class="label">Vehicle number *</label>
-                        <input type="text" placeholder="vehicle number">
+                    
+                </div>
+                <div class="rows">
+                    <label for="vehiclenNo" class="label">Vehicle number *</label>
+                    <div class="subrow">
+                        <input type="text" id="vehicleNumber" placeholder="vehicle number" onkeyup="onkeyupVehicleNo()">
+                        <label id="lblvechNumber" class="labelerr">vehicle number is required</label>
                     </div>
-                    <div class="rows">
-                        <label for="parkingHours" class="label">Parking hours *</label>
-                        <input type="time">
+                    
+                </div>
+                <div class="rows">
+                    <label for="contactNo" class="label">Contact number *</label>
+                    <div class="subrow">
+                        <input type="tel" id="contactNumber" placeholder="Phone number" onkeyup="onkeyupContactNumber()">
+                        <label id="lblcontactNo" class="labelerr">contact number is required</label>
                     </div>
-                    <div class="rows">
-                        <label for="vehicleType" class="label">Vehicle type *</label>
-                        <select name="vehicletype" id="Vehicletype">
+                    
+                </div>
+                <div class="rows">
+                    <label for="parkingHours" class="label">Parking hours *</label>
+                    <div class="subrow">
+                        <input type="time" id="parkingHours" onkeyup="onkeyupParkhours()">
+                        <label id="lblparkingHours" class="labelerr">parking hours is required</label>
+                    </div>
+                    
+                </div>
+                <div class="rows">
+                    <label for="vehicleType" class="label">Vehicle type *</label>
+                    <div class="subrow">
+                        <select name="vehicletype" id="Vehicletype" onkeyup="onkeyupVechicleType()">
+                            <option value="required" disabled>Required</option>
                             <option value="car">Car</option>
                             <option value="bike">Bike</option>
                         </select>
+                        <label id="lblvehicleType" class="labelerr">vehicle type is required</label>
                     </div>
-                    <div class="rows">
-                        <label for="parkingdate" class="label">Parking date *</label>
-                        <input type="date" name="" id="">
+                  
+                </div>
+                <div class="rows">
+                    <label for="parkingdate" class="label">Parking date *</label>
+                    <div class="subrow">
+                        <input type="date" name="" id="parkingdate" onkeyup="onkeyupParkingDate()">
+                        <label id="lblparkingDate" class="labelerr">parking date is required</label>
                     </div>
-                    <div class="rows" id="submit">
-                        <input type="submit">
-                        <input id="reset" type="reset">
-                    </div>                
+                    
                 </div>
             </form>
+                <div class="rows">
+                    <div class="sub"><input id="reset" type="button" onclick="reset()" value="Reset"></div>
+                    <div class="res"><button onclick="submit()" id="submit">Submit</button></div>
+                </div>       
         </div>
     </div>
 </body>
