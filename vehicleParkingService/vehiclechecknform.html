@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/f599d6d5c2.js" crossorigin="anonymous"></script>
+    <script src="parking.js"></script>
+    <title>Vehicle check-in form</title>
+</head>
+
+<body>
+    <nav>
+        <div class="navheading"><img src="/images/parking.png" alt="" srcset="">
+            <p> Vehicle parking service </p>
+        </div>
+        <div class="links">
+            <a href="loginform.html" id="active"><i id="icon1" class="fas fa-sign-in-alt"></i> Vehicle check-in form</a>
+            <a href="vehicledetails.html"><i id="icon" class="fas fa-info-circle"></i> Vehicle details</a>
+        </div>
+    </nav>
+
+    <div class="mainbody">
+        <h2 class="heading">Vehicle check-in form</h2>
+        <hr class="headingunderline">
+        
+        <div class="costperhour">
+            <p>Cost / Hr  </p>
+            <div class="bike">
+                <i class="fa fa-motorcycle" aria-hidden="true"></i>
+                <p style="display: inline;"> - 3 &#8377 / Hr</p>
+            </div>
+            <div class="car">
+                <i class="fa fa-car" aria-hidden="true"></i>
+                <p style="display: inline;"> - 5 &#8377 / Hr</p>
+            </div>
+        </div>
+
+
+        <div class="input-form">
+            <form autocomplete="off">
+                <div class="rows">
+                    <label for="customerName" class="label">Customer name *</label>
+                    <div class="subrow">
+                        <input type="text" id="customerName" placeholder="customer name" onkeyup="onkeyupCustomerName()"
+                            autofocus>
+                        <label id="lblcustomerName" class="labelerr">customer name is required</label>
+                    </div>
+                </div>
+                <div class="rows">
+                    <label for="address" class="label">Address *</label>
+                    <div class="subrow">
+                        <textarea name="address" id="address" cols="30" rows="10" style="padding: 10px;"
+                            placeholder="address" onkeyup="onkeyupAddress()"></textarea>
+                        <label id="lbladdress" class="labelerradd">address is required</label>
+                    </div>
+
+                </div>
+                <div class="rows">
+                    <label for="vehicleType" class="label">Vehicle type *</label>
+                    <div class="subrow">
+                        <select name="vehicletype" id="Vehicletype" onkeyup="onkeyupVechicleType()">
+                            <option value="required" disabled>Required</option>
+                            <option value="car">Car</option>
+                            <option value="bike">Bike</option>
+                        </select>
+                        <label id="lblvehicleType" class="labelerr">vehicle type is required</label>
+                    </div>
+
+                </div>
+                <div class="rows">
+                    <label for="vehiclenNo" class="label">Vehicle number *</label>
+                    <div class="subrow">
+                        <input type="text" id="vehicleNumber" placeholder="vehicle number" onkeyup="onkeyupVehicleNo()">
+                        <label id="lblvechNumber" class="labelerr">vehicle number is required</label>
+                    </div>
+
+                </div>
+
+                <div class="rows">
+                    <label for="check-in" class="label">Check-in *</label>
+                    <div class="subrow">
+                        <input type="time" id="checkin" onkeyup="onkeyupcheckin()">
+                        <label id="lblcheckin" class="labelerr">checkin is required</label>
+                    </div>
+
+                </div>
+
+                <div class="rows">
+                    <label for="check-out" class="label">Check-out *</label>
+                    <div class="subrow">
+                        <input type="time" id="checkout" onchange="onkeyupcheckout()">
+                        <label id="lblckeckout" class="labelerr">checkout is required</label>
+                    </div>
+                    <label id="totalcost"></label>
+                </div>
+
+
+                <div class="rows">
+                    <label for="parkingdate" class="label">Parking date *</label>
+                    <div class="subrow">
+                        <input type="date" name="" id="parkingdate" onkeyup="onkeyupParkingDate()">
+                        <label id="lblparkingDate" class="labelerr">parking date is required</label>
+                    </div>
+
+                </div>
+            </form>
+            <div class="rows">
+                <div class="res"><button id="reset" onclick="reset()">Reset</button></div>
+                <div class="sub"><button onclick="submit()" id="submit">Submit</button></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

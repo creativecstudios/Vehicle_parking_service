@@ -1,3 +1,4 @@
+
 function submit() {
     //inputfields
     var customerName = document.getElementById("customerName");
@@ -5,19 +6,17 @@ function submit() {
     var Vehicletype = document.getElementById("Vehicletype");
     var vehicleNumber = document.getElementById("vehicleNumber");
     var checkin = document.getElementById("checkin");
-    var checkout = document.getElementById("checkout");
     var parkingdate = document.getElementById("parkingdate");
     //labels
     var lblcustomerName = document.getElementById("lblcustomerName");
     var lbladdress = document.getElementById("lbladdress");
     var lblvehicleType = document.getElementById("lblvehicleType");
     var lblvechNumber = document.getElementById("lblvechNumber");
-    var lblcheckin = document.getElementById("lblckeckin");
-    var lblcheckout = document.getElementById("lblckeckout");
+    var lblcheckin = document.getElementById("lblcheckin");
     var lblparkingDate = document.getElementById("lblparkingDate");
 
-    var submitarr = [customerName,address,Vehicletype,vehicleNumber,checkin,checkout,parkingdate];
-    var labelarr = [lblcustomerName,lbladdress,lblvehicleType,lblvechNumber,lblcheckin,lblcheckout,lblparkingDate];
+    var submitarr = [customerName,address,Vehicletype,vehicleNumber,checkin,parkingdate];
+    var labelarr = [lblcustomerName,lbladdress,lblvehicleType,lblvechNumber,lblcheckin,lblparkingDate];
 
     for(var temp = 0; temp < submitarr.length; temp++){
         if(submitarr[temp].value == ""){
@@ -28,29 +27,28 @@ function submit() {
     }
 }
 
- 
-
 function reset(){
-    //inputfields 
+    //inputfields
     var customerName = document.getElementById("customerName");
     var address = document.getElementById("address");
-    var Vehicletype = document.getElementById("Vehicletype");
     var vehicleNumber = document.getElementById("vehicleNumber");
     var checkin = document.getElementById("checkin");
     var checkout = document.getElementById("checkout");
     var parkingdate = document.getElementById("parkingdate");
+    var vehicletype = document.getElementById("vehicletype").value;
     //labels
     var lblcustomerName = document.getElementById("lblcustomerName");
     var lbladdress = document.getElementById("lbladdress");
-    var lblvehicleType = document.getElementById("lblvehicleType");
     var lblvechNumber = document.getElementById("lblvechNumber");
     var lblcheckin = document.getElementById("lblcheckin");
-    var lblckeckout = document.getElementById("lblckeckout");
     var lblparkingDate = document.getElementById("lblparkingDate");
 
-    var submitarr = [customerName,address,Vehicletype,vehicleNumber,checkin,checkout,parkingdate];
-    var labelarr = [lblcustomerName,lbladdress,lblvehicleType,lblvechNumber,lblcheckin,lblckeckout,lblparkingDate];
+    document.getElementById("totalcost").style.visibility = "hidden";
 
+    var submitarr = [customerName,address,Vehicletype,vehicleNumber,checkin,checkout,parkingdate];
+    var labelarr = [lblcustomerName,lbladdress,lblvehicleType,lblvechNumber,lblparkingHours,lblparkingDate];
+
+ 
     for(var temp = 0; temp < submitarr.length; temp++){
             submitarr[temp].value = "";
             submitarr[temp].style.border = "1px solid grey";
@@ -58,8 +56,6 @@ function reset(){
     }
 
 }
-
-
 function onkeyupCustomerName(){
     var customerName = document.getElementById("customerName");
     var lblcustomerName = document.getElementById("lblcustomerName");
@@ -109,11 +105,9 @@ function onkeyupVehicleNo(){
     }
     
 }
-
 function onkeyupcheckin(){
     var checkin = document.getElementById("checkin");
-    var lblcheckin = document.getElementById("lblcheckin");
-
+    var checkin = document.getElementById("checkin");
     if(checkin.value == "" || checkin.value == 0){
         checkin.style.border = "1px solid red";
         lblcheckin.style.visibility = "visible";
@@ -123,28 +117,33 @@ function onkeyupcheckin(){
         lblcheckin.style.visibility = "hidden";
     }
 }
-
 function onkeyupcheckout(){
     var checkin = document.getElementById("checkin").value;
     var checkout = document.getElementById("checkout").value;
-    var vehicletype = document.getElementById("Vehicletype");
-
-    var hours = checkout.split(':')[0] - checkin.split(':')[0];
+    // var car = document.getElementById("car").value;
+    // var bike = document.getElementById("bike").value;
+    var Vehicletype = document.getElementById("vehicletype").value;
+    var totalcost = document.getElementById("totalcost");
+    totalcost.style.visibility = "visible";
+    var hour = checkout.split(':')[0] - checkin.split(':')[0];
     var min = checkout.split(':')[1] - checkin.split(':')[1];
-
+    
+   //min = min.toString().length < 2 ? '0' + min : min;
     if(min < 0){
-        hours--;
-        min = 60 + min;
+        hour--;
+        min = 60 + min; 
     }
-
-    if(vehicletype.value == "Car"){
-        document.getElementById("totalcost").innerHTML = "Total hours = " + hours +' : '+ min + " Total cost is "+ 5 * hours;
+   // hour = hour.toString().length < 2
+    if(Vehicletype.value == "Car"){
+        document.getElementById("totalcost").innerHTML ="Total hours = "+ hour +" : "+min + " Total cost = "+ 5 * hour;
+    }else{
+        document.getElementById("totalcost").innerHTML ="Total hours = "+ hour +" : "+min + " Total cost = "+ 3 * hour;
+    
     }
-    else{
-        document.getElementById("totalcost").innerHTML = "Total hours = " + hours +' : '+ min + " Total cost is "+ 3 * hours;
-    }
-
+    
 }
+
+
 function onkeyupParkingDate(){
     var parkingdate = document.getElementById("parkingdate");
     var lblparkingDate = document.getElementById("lblparkingDate");

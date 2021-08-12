@@ -56,7 +56,7 @@ nav{
 mainbody
 ------------------------------------------------------------ */
 .mainbody{
-    padding: 20px;
+    padding: 15px;
     margin-left: 300px;
     height: 100%;
 }
@@ -90,31 +90,40 @@ tr:nth-child(odd){
     background-color: #eeeeee;
     color: #1A2238;
 }
+.tablediv{
+    overflow-x: auto;
+}
 /* ------------------------------------------------------------
 login form
 ------------------------------------------------------------ */
+.costperhour{
+    padding: 20px;
+    margin-left:15px ;
+    display: flex;
+    width: 380px;
+    justify-content: space-between;
+    border-radius: 6px;
+}
+.costperhour p{
+    font-weight: bold;
+    color: #1A2238;
+}
+
 .input-form{
     margin: 20px;
-    margin-left: 280px;
-    /* background-color: #F4DB7D; */
-    width: 600px;
+    margin-top: 5px;
+    margin-left: 15px;
     color: #1A2238;
-    /* width: 700px; */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-
 }
 .rows{
     display: grid;
-    /* grid-template-rows: 22px 20px 40px; */
-    /* width: 250px; */
-    grid-template-columns: 2fr 2fr ;
+    grid-template-columns: 2fr 2fr 4fr ;
     padding: 20px;
 }
 .subrow input{
     height: 30px;
     width: 250px;
-    padding-left: 10px;
-    
+    padding-left: 10px;    
 }
 .subrow select{
     width: 250px;
@@ -137,9 +146,9 @@ margin-top: 16px;
     letter-spacing: 4px;
     font-weight: bold;
     border: none;
+    outline: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-right: 10px;
     width: 190px;
 }
 .rows #reset{
@@ -149,9 +158,9 @@ margin-top: 16px;
     font-weight: bold;
     height: 40px;
     border: none;
+    outline: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-left: 10px;
     width: 190px;
     
 }
@@ -197,12 +206,6 @@ responsive
 .rows{
     display: grid;
     grid-template-columns: 2fr;
-}
-.sub{
-    margin-bottom: 20px;
-}
-.res{
-    margin-left: 10px;
 }
 }
 @media (max-width : 300px){

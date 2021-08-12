@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.navheading {
+    margin-top: 30px;
+    margin-left: 20px;
+    font-weight: bold;
+    color: #eeeeee;
+    cursor: pointer;
+}
+
+.navheading p {
+    display: inline;
+}
+
+.navheading img {
+    height: 30px;
+    width: 30px;
+}
+
+.links {
+    padding-top: 50px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #FFFFFF;
+    display: block;
+    padding: 13px;
+}
+
+.links a:hover {
+    background-color: #F4DB7D;
+    color: #1A2238;
+    font-weight: bold;
+    font-size: 17px;
+    transition: ease-in-out .5s;
+}
+
+#active {
+    background-color: #F4DB7D;
+    color: #1A2238;
+    font-weight: bold;
+}
+
+.card {
+    /* background-color:#7DA2A9; */
+    /* background-color: #8AA899; */
+    /* background-color: #F2D349; */
+    /* background-color: #E1FCFD; */
+    /* background-color: #9DAAF2; */
+    /* background-color: #FF6A3D; */
+    background-color: #1A2238;
+    /* background-color: #E8EAE3; */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    color: #F4DB7D;
+    margin-top: 10px;
+}
+
+.table-hover tbody tr:hover td{
+    background-color: #1A2238;
+    color: #F4DB7D;
+}
+
+.labelerr {
+    color: red;
+    visibility: hidden;
+}
+
+.labelerradd {
+    color: red;
+    visibility: hidden;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
