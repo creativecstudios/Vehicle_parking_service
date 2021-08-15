@@ -4,12 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jquery  -->
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/f599d6d5c2.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="style.css">
     <script src="parkingbootstrap.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="jqueryvalidation.js"></script> -->
+    <!-- <script type="text/javascript" src="js/bootstrap-timepicker.min.js"></script> -->
     <title>Vehicle Check-in form</title>
 </head>
 
@@ -20,7 +27,7 @@
             ---------------------------------------------------------------
             sidenav
             ---------------------------------------------------------------- -->
-            <div class="col-2" style="background-color: #1A2238; height: 100vh; margin : 0; padding: 0; ">
+            <div class="col-2" style="background-color: #1A2238; margin : 0; padding: 0;">
                 <div class="navheading"><img src="/images/parking.png" alt="" srcset="">
                     <p>Vehicle parking service</p>
                 </div>
@@ -28,7 +35,8 @@
                     <a href="vehiclecheckinformbootstrap.html" id="active"><i class="fas fa-sign-in-alt"></i> Vehicle
                         check-in
                         form</a>
-                    <a href="vehicledetailsbootstrap.html"><i class="fas fa-info-circle"></i> Vehicle details</a>
+                    <a href="vehicledetailsbootstrap.html"><i class="fas fa-info-circle"></i> Vehicle
+                        details</a>
                 </div>
             </div>
             <!-- ---------------------------------------------------------------
@@ -39,24 +47,22 @@
                     <div class="card-body" style="text-align: center;">
                         <h5> Vehicle check-in form </h5>
                         <footer class="footer" style="font-size: large; font-weight: bold;">
-                            <i class="fa fa-motorcycle" aria-hidden="true"></i> - 3 &#8377 / Hr,
-                            <i class="fa fa-car" aria-hidden="true"></i> - 5 &#8377 / Hr
+                            <i class="fa fa-motorcycle" aria-hidden="true"></i> - 4 &#8377 / Hr,
+                            <i class="fa fa-car" aria-hidden="true"></i> - 8 &#8377 / Hr
                         </footer>
                     </div>
                 </div>
                 <!-- --------------------------------------------------------------- -->
                 <!-- form -->
                 <!-- --------------------------------------------------------------- -->
-                <form style="margin-left: 25px;" autocomplete="off">
+                <form style="margin-left: 25px;" autocomplete="off" id="vehicleform">
 
 
-                    <div class="form-group row" style="margin-top: 10px;">
+                    <div class="form-group row" style="margin-top: 30px;">
                         <label for="customername" class="col-2 col-form-label">Customer name *</label>
                         <div class="col-4">
-                            <input type="text" class="form-control" id="customerName" placeholder="customer name"
-                                onkeyup="onkeyupCustomerName()">
+                            <input type="text" class="form-control" id="customerName" placeholder="customer name" onkeyup="onkeyupCustomerName()" name="customername">
                             <label id="lblcustomerName" class="labelerr">customer name is required</label>
-
                         </div>
                     </div>
 
@@ -64,49 +70,28 @@
                     <div class="form-group row">
                         <label for="address" class="col-2 col-form-label">Address *</label>
                         <div class="col-4">
-                            <textarea class="form-control" id="address" rows="2" onkeyup="onkeyupAddress()"></textarea>
+                            <textarea class="form-control" id="address" rows="2" name="address" onkeyup="onkeyupAddress()"></textarea>
                             <label id="lbladdress" class="labelerradd">address is required</label>
 
                         </div>
                     </div>
 
-
-                    <!-- <fieldset class="form-group">
-                        <div class="row">
-                            <legend class="col-form-label col-2 pt-0">Vehicle type *</legend>
-                            <div class="col-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="car"
-                                        value="option1" checked>
-                                    <label class="form-check-label" for="gridRadios1">
-                                        car
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="bike"
-                                        value="option2">
-                                    <label class="form-check-label" for="gridRadios2">
-                                        bike
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset> -->
                     <div class="form-group row" style="margin-top: 5px;">
                         <label for="vehicletype" class="col-2 col-form-label">Vehicle type *</label>
                         <div class="col-4">
-                            <select class="form-select form-control" aria-label="Default select example" id="vehicletype">
-                                <option >Car</option>
-                                <option >Bike</option>
+                            <select class="form-select form-control" aria-label="Default select example"
+                                id="vehicletype">
+                                <option>Car</option>
+                                <option>Bike</option>
                             </select>
+                            <label id="lblvehicletype" class="labelerr">Vehicle type is required</label>
                         </div>
                     </div>
 
                     <div class="form-group row" style="margin-top: 5px;">
                         <label for="vehiclenumber" class="col-2 col-form-label">Vehicle number *</label>
                         <div class="col-4">
-                            <input type="text" class="form-control" id="vehicleNumber" placeholder="vehicle number"
-                                onkeyup="onkeyupVehicleNo()">
+                            <input type="text" class="form-control" id="vehicleNumber" name="vehiclenumber" placeholder="vehicle number" onkeyup="onkeyupVehicleNo()">
                             <label id="lblvechNumber" class="labelerr">vehicle number is required</label>
 
                         </div>
@@ -116,40 +101,46 @@
                     <div class="form-group row" style="margin-top: 5px;">
                         <label for="checkin" class="col-2 col-form-label">Check-in *</label>
                         <div class="col-4">
-                            <input type="time" class="form-control" id="checkin" onkeyup="onkeyupcheckin()">
-                            <label id="lblcheckin" class="labelerr">check-in is required</label>
+                            <input type="time" class="form-control" id="checkin" name="checkin"
+                                onkeyup="onkeyupcheckin()" >
+                            <label id="lblcheckin" class="labelerr">check-in time is required</label>
 
                         </div>
                     </div>
 
 
                     <div class="form-group row" style="margin-top: 5px;">
-                        <label for="checkout" class="col-2 col-form-label" ">Check-out*</label>
-                        <div class=" col-4">
-                            <input type="time" class="form-control" id="checkout" onchange="onkeyupcheckout()">
+                        <label for="checkout" class="col-2 col-form-label">Check-out *</label>
+                        <div class="col-4">
+                            <input type="time" class="form-control" id="checkout" name="checkout"
+                                onkeyup="onkeyupcheckout()">
+                            <label id="lblcheckout" class="labelerr">check-out time is required</label>
+                        </div>
+                        <span class="badge" id="totalcost" style="font-size: 15px;"></span>
+
                     </div>
-                    <span class="badge" id="totalcost" style="font-size: 15px;"></span>
+
+                    <div class="form-group row" style="margin-top: 5px;">
+                        <label for="parkingdate" class="col-2 col-form-label">Parking date *</label>
+                        <div class="col-4">
+                            <input type="date" class="form-control" id="parkingdate" name="parkingdate"
+                                onkeyup="onkeyupParkingDate()">
+                            <label id="lblparkingDate" class="labelerr">parking date is required</label>
+                        </div>
+                    </div>
+            
+
+                </form>
+
+                <button class="btn btn-primary col-2" onclick="reset()" style="margin-left: 20px; margin-bottom: 30px;" id="reset">Reset</button>
+                <button class="btn btn-success col-2" onclick="submit()" style="margin-left: 20px; margin-bottom: 30px; ">Submit</button>
             </div>
 
 
-            <div class="form-group row" style="margin-top: 5px;">
-                <label for="parkingdate" class="col-2 col-form-label">Parking date *</label>
-                <div class="col-4">
-                    <input type="date" class="form-control" id="parkingdate" onkeyup="onkeyupParkingDate()">
-                    <label id="lblparkingDate" class="labelerr">parking date is required</label>
-                </div>
-            </div>
 
-
-            </form>
-
-            <button class="btn btn-primary col-2" onclick="reset()" style="margin-right: 10px;">Reset</button>
-            <button class="btn btn-success col-2" onclick="submit()" style="margin-left: 10px;">Submit</button>
-
-        </div>
-    </div>
     </div>
 
 </body>
+
 
 </html>

@@ -77,3 +77,17 @@
 .form-control:focus {
     box-shadow: none;
 }
+
+.error{
+    color: red;
+
+}
+.table-responsive{
+    height: 300px;
+}
+table thead tr th{
+    position: sticky;
+    top :0px;
+    background-color: #1A2238;
+}
+
