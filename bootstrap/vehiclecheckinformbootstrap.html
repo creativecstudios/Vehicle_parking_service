@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="jquery.datetimepicker.css" />
+    <script src="./jquery.datetimepicker.js"></script>
+    <script src="https://kit.fontawesome.com/f599d6d5c2.js" crossorigin="anonymous"></script>
+
+    <script src="parkingbootstrap.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="jquery.datetimepicker.min.css">
+
+    <!-- validate  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+
+
+
+
+    <title>Vehicle Check-in form</title>
+</head>
+
+<body>
+    <script src="jquery.js"></script>
+    <script src="jquery.datetimepicker.full.min.js"></script>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- 
+            ---------------------------------------------------------------
+            sidenav
+            ---------------------------------------------------------------- -->
+            <div class="col-2"
+                style="background-color:#E8EAE3;color: #373833; margin : 0; padding: 0; min-height: 100vh;">
+                <div class="navheading">
+                    <!-- <img src="/images/parking.png" alt="" srcset=""> -->
+                    <i class="fas fa-anchor"></i>
+                    <p>Vehicle parking service</p>
+                </div>
+                <div class="links">
+                    <a href="vehiclecheckinformbootstrap.html" id="active"><i class="fas fa-sign-in-alt"></i> Vehicle
+                        check-in
+                        form</a>
+                    <a href="vehicledetailsbootstrap.html"><i class="fas fa-info-circle"></i> Vehicle
+                        details</a>
+                </div>
+            </div>
+            <!-- ---------------------------------------------------------------
+            card
+            --------------------------------------------------------------- -->
+            <div class="col-10">
+                <div class="card" style="margin-top: 10px;">
+                    <div class="card-body" style="text-align: center;">
+                        <h5> Vehicle check-in form </h5>
+                        <footer class="footer" style="font-size: large; font-weight: bold;">
+                            <i class="fa fa-motorcycle" aria-hidden="true"></i> - 4 &#8377 / Hr,
+                            <i class="fa fa-car" aria-hidden="true"></i> - 8 &#8377 / Hr
+                        </footer>
+                    </div>
+                </div>
+                <!-- --------------------------------------------------------------- -->
+                <!-- form -->
+                <!-- --------------------------------------------------------------- -->
+                <form style="margin-left: 25px;" autocomplete="off" id="vehicleform">
+
+
+                    <div class="form-group row" style="margin-top: 30px;">
+                        <label for="customername" class="col-2 col-form-label">Customer name *</label>
+                        <div class="col-4">
+                            <input type="text" class="form-control" id="customerName" placeholder="customer name"
+                                onkeyup="onkeyupCustomerName()" name="customername">
+                            <label id="lblcustomerName" class="labelerr">customer name is required</label>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label for="address" class="col-2 col-form-label">Address *</label>
+                        <div class="col-4">
+                            <textarea class="form-control" id="address" rows="2" name="address"
+                                onkeyup="onkeyupAddress()"></textarea>
+                            <label id="lbladdress" class="labelerradd">address is required</label>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group row" style="margin-top: 5px;">
+                        <label for="vehicletype" class="col-2 col-form-label">Vehicle type *</label>
+                        <div class="col-4">
+                            <select class="form-select form-control" onclick="onkeyupVechicleType()"
+                                aria-label="Default select example" id="vehicletype">
+                                <option value="Car">Car</option>
+                                <option value="Bike">Bike</option>
+                            </select>
+                            <label id="lblvehicletype" class="labelerr">Vehicle type is required</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group row" style="margin-top: 5px;">
+                        <label for="vehiclenumber" class="col-2 col-form-label">Vehicle number *</label>
+                        <div class="col-4">
+                            <input type="text" class="form-control" id="vehicleNumber" name="vehiclenumber"
+                                placeholder="vehicle number" onchange="onkeyupVehicleNo()">
+                            <label id="lblvechNumber" class="labelerr">vehicle number is required</label>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row" style="margin-top: 5px;">
+                        <label for="checkin" class="col-2 col-form-label">Check-in *</label>
+                        <div class="col-4">
+                            <input style="background-color: white;" type="text" class="form-control" id="checkin"
+                                name="checkin" readonly " onkeypress="onkeycheckin()">
+                            <label id=" lblcheckin" class="labelerr">check-in date & time is required</label>
+                        </div>
+                        <i class="fas fa-calendar-alt" id="calendericon"></i>
+                    </div>
+
+
+                    <div class="form-group row" style="margin-top: 5px;">
+                        <label for="checkout" class="col-2 col-form-label">Check-out *</label>
+                        <div class="col-4">
+                            <input type="text" style="background-color: white;" class="form-control" id="checkout"
+                                name="checkout" readonly " onkeypress="onkeycheckout()">
+                            <label id=" lblcheckout" class="labelerr">check-out date & time is required</label>
+                        </div>
+                        <i class="fas fa-calendar-alt" id="calendericon"></i>
+                        <span class="badge" id="totalcost" style="font-size: 15px;"></span>
+                    </div>
+
+                </form>
+
+                <button class="btn col-2" onclick="reset()" style="margin-left: 20px; margin-bottom: 30px; 
+                background-color:#E8EAE3; color:#373833" id="reset">Reset</button>
+                <button class="btn col-2" onclick="submit()" style="margin-left: 20px; margin-bottom: 30px; 
+                background-color:#E8EAE3; color:#373833; ">Submit</button>
+                <button class="btn col-2" onclick="update()" style="margin-left: 20px; margin-bottom: 30px; 
+                background-color:#E8EAE3; color:#373833; visibility: hidden;">Update</button>
+            </div>
+
+        </div>
+        <script>
+            $(document).ready(function () {
+                $('#checkin,#checkout').datetimepicker({
+                    step: 15,
+                    showPeriod: true,     // FOR AM/PM FORMAT
+                    formatTime: 'g:iA',
+                    // showOn: "button",
+                    // buttonImage: "images/github.png",
+                    // buttonImageOnly: true,
+                    // buttonText: "Select date"
+                });
+
+                // $("#datepickicon").datetimepicker({
+                //     step: 15,
+                //     showPeriod: true,     // FOR AM/PM FORMAT
+                //     formatTime: 'g:iA',
+                //     // validateOnBlur: false,
+
+                // });
+
+
+                $('#checkout').datetimepicker(
+                    {
+                        onSelect: function () { }
+                    }
+                ).on("change", function () {
+                    // console.log("clicked");
+
+                    var checkin = $('#checkin').val();
+                    var checkout = $('#checkout').val();
+                    var vehicletype = $('#vehicletype').val();
+
+                    //year 
+                    var year = checkout.substring(0, 4) - checkin.substring(0, 4);
+                    if (year < 0) {
+                        $('#totalcost').html("checkout year is greater than checkin year");  
+                    }
+
+                    //month
+                    var month = checkout.substring(5, 7) - checkin.substring(5, 7);
+                    if (month < 0) {
+                        $('#totalcost').html("checkout month is greater than checkin month");
+                        
+                    }
+
+                    //date
+                    var date = checkout.substring(8, 10) - checkin.substring(8, 10);
+                    if (date < 0) {
+                        console.log(date);
+                        $('#totalcost').html("checkout date is greater than checkin date");   
+                    }
+
+                    //time
+                    var checkintime = checkin.substring(11);
+                    var checkouttime = checkout.substring(11);
+
+                    //hour min
+                    var hour = checkouttime.split(':')[0] - checkintime.split(':')[0];
+                    if(hour < 0){
+                        $('#totalcost').html("checkout time is greater than checkin time");
+                    }
+                    var min = checkouttime.split(':')[1] - checkintime.split(':')[1];
+
+                    if(date > 0){
+                        hour = date * 24 + hour;
+                    }
+                    
+                    //min calculation
+                    if (min < 0) {
+                        hour--;
+                        min = 60 + min;
+                    }
+
+                    var temp = 0;
+                    if (min > 0 && min <= 15) {
+                        temp = 1;
+                    }
+                    if (min > 15 && min <= 30) {
+                        temp = 2;
+                    }
+                    if (min > 30 && min <= 45) {
+                        temp = 3;
+                    }
+                    if (min > 45 && min <= 59) {
+                        temp = 4;
+                    }
+
+                    if (vehicletype == "Bike") {
+                        if (hour > 0) {
+                            $('#totalcost').html(hour + "hours : " + min + "mins Total cost = " + (4 * hour + temp));
+                        }
+                    }
+                    else {
+                        if (hour > 0) {
+                            $('#totalcost').html(hour + "hours : " + min + "mins Total cost = " + (8 * hour + 2 * temp));
+                        }
+                    }
+
+                })
+
+            })
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+.navheading {
+    margin-top: 30px;
+    margin-left: 20px;
+    font-weight: bold;
+    color: #373833;
+    cursor: pointer;
+}
+
+.navheading p {
+    display: inline;
+}
+
+.navheading img {
+    height: 30px;
+    width: 30px;
+}
+
+.links {
+    padding-top: 50px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #373833;
+    display: block;
+    padding: 13px;
+}
+
+.links a:hover {
+    background-color:#373833;
+    color: #E8EAE3;
+    font-weight: bold;
+    font-size: 17px;
+    transition: ease-in-out .5s;
+}
+
+#active {
+    background-color:#373833;
+    color:#E8EAE3;
+    font-weight: bold;
+}
+
+
+.card {
+    /* background-color:#7DA2A9; */
+    /* background-color: #8AA899; */
+    
+    
+    /* background-color: #FF6A3D; */
+    /* background-color: #1A2238; */
+    /* background-color:#165757; */
+    background-color:#E8EAE3;
+    /* background-color: #1D2228; */
+    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+    color:#373833;
+    /* color: #E1E2E2; */
+    /* color: #1A2238; */
+    margin-top: 10px;
+}
+
+.table-hover tbody tr:hover td{
+    background-color: #373833;
+    color: #E8EAE3;
+}
+
+.labelerr {
+    color: red;
+    visibility: hidden;
+}
+
+.labelerradd {
+    color: red;
+    visibility: hidden;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.error{
+    color: red;
+
+}
+
+table thead tr th{
+    position: sticky;
+    top :0px;
+    background-color: #E8EAE3;
+}
+.col-2{
+    color: #373833;
+    font-weight: bolder;
+}
+
+/* #calendericon{
+    height: 100px;
+    width: 100px;
+} */
+/* .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: #00203FFF;
+    color: white!important;
+  }
+  .dataTables_wrapper .dataTables_paginate .paginate_button.current{
+    background: #00203FFF !important;
+    color: white !important;
+  } */
