@@ -1,6 +1,6 @@
 ## Springboot Annotations
 
-@SpringBootApplication      ->		Main class of the spring boot application it is the starting point.
+### @SpringBootApplication      ->		Main class of the spring boot application it is the starting point.
 
 @Bean 				              ->		Indicates that the method produces the bean to be managed by spring.
 
