@@ -65,7 +65,7 @@ CrudRepository			        ->		Basic crud operations (create,retrive,update,delete
 JpaRepository		            ->		JPA repository extends crud repository and paging and sorting repository.
 
 
-
+ 
 
 
 
