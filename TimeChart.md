@@ -1,5 +1,5 @@
 
-**DATE	TOPICS TO BE COVERED
+** DATE	TOPICS TO BE COVERED
 
 06-09-2021	Custom validation in Reactive forms		
 07-09-2021	Get and Post in Angular		
